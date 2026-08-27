@@ -1,0 +1,439 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meet the Campus Leadership - ISUFST San Enrique Campus</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #222;
+      margin: 0;
+      padding: 0;
+      background-image:
+        linear-gradient(rgba(6, 20, 50, 0.55), rgba(6, 20, 50, 0.7)),
+        url("images.png");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+    }
+
+    /* ---------- TOP BRAND BANNER ---------- */
+    .brand-banner {
+      width: 100%;
+      background: #ffffff url("images.png") center top / cover no-repeat;
+      min-height: 120px;
+      border-bottom: 6px solid #cba135;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0b3d91 0%, #123a8c 55%, #0a2a66 100%);
+      color: white;
+      text-align: center;
+      padding: 20px 10px 40px 10px;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+      position: relative;
+    }
+    header h1 {
+      margin: 0 0 6px 0;
+      font-size: 2.3em;
+      letter-spacing: 0.5px;
+    }
+    header p {
+      margin: 0;
+      font-size: 14px;
+      color: #f3d98b;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+    }
+
+    .gold-divider {
+      display: block;
+      max-width: 380px;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 20px auto 0 auto;
+      padding: 25px 20px 35px 20px;
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: 14px;
+      box-shadow:
+        0 10px 25px rgba(11,61,145,0.15),
+        0 2px 6px rgba(0,0,0,0.08);
+      border: 1px solid rgba(203,161,53,0.35);
+    }
+    section h2 {
+      text-align: center;
+      color: #0b3d91;
+      font-size: 1.5em;
+      letter-spacing: 0.5px;
+      margin-top: 0;
+      margin-bottom: 6px;
+    }
+
+    section.transparent {
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(203,161,53,0.55);
+      backdrop-filter: blur(2px);
+    }
+    section.transparent h2 {
+      color: #ffffff;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+    }
+    section > p.note {
+      text-align: center;
+      font-size: 13px;
+      color: #8a6d1a;
+      margin: 4px 0 10px 0;
+      font-style: italic;
+    }
+
+    .officials-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 26px;
+      margin-top: 22px;
+    }
+
+    /* ---------- CARD COMPONENT STYLES ---------- */
+    .card {
+      background: #ffffff;
+      width: 210px;
+      padding: 0 0 18px 0;
+      border-radius: 12px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+      border: 1px solid rgba(203,161,53,0.3);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+    }
+
+    .ribbon {
+      position: absolute;
+      top: 14px;
+      right: -30px;
+      background: #cba135;
+      color: #ffffff;
+      font-size: 9px;
+      font-weight: bold;
+      padding: 4px 30px;
+      transform: rotate(45deg);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      letter-spacing: 0.5px;
+      z-index: 2;
+    }
+
+    .photo-frame {
+      width: 105px;
+      height: 105px;
+      border-radius: 50%;
+      margin: 22px auto 10px auto;
+      border: 3px solid #0b3d91;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #eef3fb;
+      box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .sheen {
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+      transform: skewX(-25deg);
+      transition: left 0.65s ease;
+    }
+
+    .card:hover .sheen {
+      left: 150%;
+    }
+
+    .card h3 {
+      margin: 12px 10px 4px 10px;
+      font-size: 1.05em;
+      color: #0b3d91;
+    }
+
+    .card p.position {
+      margin: 0 10px;
+      font-size: 11.5px;
+      color: #8a6d1a;
+      font-weight: bold;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+    }
+
+    .card p.dept {
+      margin: 6px 10px 0 10px;
+      font-size: 12px;
+      color: #555;
+      line-height: 1.4;
+    }
+
+    footer {
+      text-align: center;
+      padding: 26px 10px 34px 10px;
+      color: #f3d98b;
+      font-size: 12.5px;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+    }
+    footer p { margin: 4px 0; }
+  </style>
+</head>
+<body>
+
+  <div class="brand-banner"></div>
+
+  <header>
+    <h1>Meet the Campus Leadership</h1>
+    <p>ISUFST — SAN ENRIQUE CAMPUS</p>
+  </header>
+
+  <!-- ================= 1. UNIVERSITY LEVEL OFFICIALS ================= -->
+  <section class="transparent">
+    <h2>University Level</h2>
+    <p class="note" style="color:#f3d98b;">Iloilo State University of Fisheries Science and Technology — System</p>
+
+    <div class="officials-grid">
+
+      <div class="card">
+        <div class="ribbon">SYSTEM</div>
+        <div class="photo-frame">
+          <img src="1.webp" alt="Dr. Nordy D. Siason Jr. - University President">
+          <div class="sheen"></div>
+        </div>
+        <h3>Dr. Nordy D. Siason Jr.</h3>
+        <p class="position">University President</p>
+        <p class="dept">Office of the President</p>
+      </div>
+
+    
+  </section>
+
+  <!-- ================= 2. CAMPUS LEVEL OFFICIALS ================= -->
+  <section>
+    <h2>Campus Officials</h2>
+    <p class="note">Iloilo State University of Fisheries Science and Technology — San Enrique Campus</p>
+
+    <div class="officials-grid">
+
+      <div class="card">
+        <div class="ribbon">CAMPUS</div>
+        <div class="photo-frame">
+          <img src="2.jpg" alt="Campus Administrator">
+          <div class="sheen"></div>
+        </div>
+        <h3>DR. MICHAEL B. DIZON</h3>
+        <p class="position">Campus Administrator</p>
+        <p class="dept">ISUFST San Enrique Campus</p>
+      </div>
+
+      <div class="card">
+        <div class="ribbon">ADMIN</div>
+        <div class="photo-frame">
+          <img src="3.jpeg" alt="Administrative Officer">
+          <div class="sheen"></div>
+        </div>
+        <h3>Melby P. Parreño</h3>
+        <p class="position">Administrative Officer</p>
+        <p class="dept">Finance &amp; General Services</p>
+      </div>
+
+    
+  </section>
+
+  <!-- ================= 3. DEANS OF DEPARTMENTS ================= -->
+  <section>
+    <h2>Academic Deans</h2>
+    <p class="note">Deans of Colleges and Departments</p>
+
+    <div class="officials-grid">
+
+      <div class="card">
+        <div class="ribbon">DEAN</div>
+        <div class="photo-frame">
+          <img src="4.jpeg" alt="Dr. Wenda D. Panes Ed.D - Dean, CICI">
+          <div class="sheen"></div>
+        </div>
+        <h3>Dr. Wenda D. Panes Ed.D</h3>
+        <p class="position">Dean</p>
+        <p class="dept">College of Informatics and Computer Innovation</p>
+      </div>
+
+      <div class="card">
+        <div class="ribbon">DEAN</div>
+        <div class="photo-frame">
+          <img src="5.jpeg" alt="Dean, College of Education">
+          <div class="sheen"></div>
+        </div>
+        <h3>Dr. Rene T. Estomo </h3>
+        <p class="position">Dean</p>
+        <p class="dept">College of Education</p>
+      </div>
+
+      <div class="card">
+        <div class="ribbon">DEAN</div>
+        <div class="photo-frame">
+          <img src="6.jpeg" alt="Dean, College of Agriculture">
+          <div class="sheen"></div>
+        </div>
+        <h3>Noli L. Gerona </h3>
+        <p class="position">Dean</p>
+        <p class="dept">College of Agriculture</p>
+      </div>
+      
+        <div class="card">
+    <div class="ribbon">DEAN</div>
+    <div class="photo-frame">
+      <img src="7.jpeg" alt="Dean, College of management">
+      <div class="sheen"></div>
+    </div>
+    <h3>Janice H. Ching </h3>
+    <p class="position">Dean</p>
+    <p class="dept">College of Management</p>
+  </div>
+
+
+    </div>
+  </section>
+
+  <!-- ================= 4. CICI FACULTY MEMBERS & STAFF ================= -->
+  <section>
+    <h2>College of Informatics and Computer Innovation (CICI)</h2>
+    <p class="note">Faculty Members &amp; Support Staff</p>
+
+    <div class="officials-grid">
+
+      <div class="card">
+        <div class="ribbon">DEAN</div>
+        <div class="photo-frame">
+          <img src="8.jpeg" alt="Dr. Wenda D. Panes Ed.D">
+          <div class="sheen"></div>
+        </div>
+        <h3>Dr. Wenda D. Panes Ed.D</h3>
+        <p class="position">Dean / Faculty</p>
+        <p class="dept">College of Informatics and Computer Innovation</p>
+      </div>
+
+      <div class="card">
+        <div class="ribbon">FACULTY</div>
+        <div class="photo-frame">
+          <img src="9.jpg" alt="Instr. Dave Allan Tagacay">
+          <div class="sheen"></div>
+        </div>
+        <h3>Instr. Dave Allan Tagacay</h3>
+        <p class="position">Instructor</p>
+        <p class="dept">College of Informatics and Computer Innovation</p>
+      </div>
+
+      <div class="card">
+        <div class="ribbon">FACULTY</div>
+        <div class="photo-frame">
+          <img src="10.jpg" alt="Dr. Wenna J. Bulnes">
+          <div class="sheen"></div>
+        </div>
+        <h3>Dr. Wenna J. Bulnes</h3>
+        <p class="position">Faculty</p>
+        <p class="dept">College of Informatics and Computer Innovation</p>
+      </div>
+
+      <div class="card">
+        <div class="ribbon">FACULTY</div>
+        <div class="photo-frame">
+          <img src="11.jpg" alt="Dr. Analiza G. Alingalan">
+          <div class="sheen"></div>
+        </div>
+        <h3>Dr. Analiza G. Alingalan</h3>
+        <p class="position">Faculty</p>
+        <p class="dept">College of Informatics and Computer Innovation</p>
+      </div>
+
+      <div class="card">
+        <div class="ribbon">FACULTY</div>
+        <div class="photo-frame">
+          <img src="12.jpg" alt="Dr. Dythne P. Dacudao">
+          <div class="sheen"></div>
+        </div>
+        <h3>Dr. Dythne P. Dacudao</h3>
+        <p class="position">Faculty</p>
+        <p class="dept">College of Informatics and Computer Innovation</p>
+      </div>
+
+      <div class="card">
+        <div class="ribbon">FACULTY</div>
+        <div class="photo-frame">
+          <img src="13.jpg" alt="Dr. Ian P. Sugatan">
+          <div class="sheen"></div>
+        </div>
+        <h3>Dr. Ian P. Sugatan</h3>
+        <p class="position">Faculty</p>
+        <p class="dept">College of Informatics and Computer Innovation</p>
+      </div>
+
+      <div class="card">
+        <div class="ribbon">FACULTY</div>
+        <div class="photo-frame">
+          <img src="14.jpeg" alt="Instr. Ivan Silvestre">
+          <div class="sheen"></div>
+        </div>
+        <h3>Instr. Ivan Silvestre</h3>
+        <p class="position">Instructor</p>
+        <p class="dept">College of Informatics and Computer Innovation</p>
+      </div>
+      
+      <div class="card">
+        <div class="ribbon">STAFF</div>
+        <div class="photo-frame">
+          <img src="15.jpeg" alt="Andrea Delos Santos">
+          <div class="sheen"></div>
+        </div>
+        <h3>Andrea Delos Santos</h3>
+        <p class="position">Staff</p>
+        <p class="dept">College of Informatics and Computer Innovation</p>
+      </div>
+
+      <div class="card">
+        <div class="ribbon">STAFF</div>
+        <div class="photo-frame">
+          <img src="16.jpeg" alt="Michael Borcillo">
+          <div class="sheen"></div>
+        </div>
+        <h3>Michael Borcillo</h3>
+        <p class="position">Staff</p>
+        <p class="dept">College of Informatics and Computer Innovation</p>
+      </div>
+
+
+    </div>
+  </section>
+
+  <footer>
+    <p>Iloilo State University of Fisheries Science and Technology</p>
+    <p>San Enrique Campus &middot; Est. 2020</p>
+  </footer>
+
+</body>
+</html>
+
