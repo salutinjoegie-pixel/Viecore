@@ -1,439 +1,463 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meet the Campus Leadership - ISUFST San Enrique Campus</title>
-  <style>
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      color: #222;
-      margin: 0;
-      padding: 0;
-      background-image:
-        linear-gradient(rgba(6, 20, 50, 0.55), rgba(6, 20, 50, 0.7)),
-        url("images.png");
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      background-repeat: no-repeat;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meet the Campus Leadership — ISUFST San Enrique Campus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
 
-    /* ---------- TOP BRAND BANNER ---------- */
-    .brand-banner {
-      width: 100%;
-      background: #ffffff url("images.png") center top / cover no-repeat;
-      min-height: 120px;
-      border-bottom: 6px solid #cba135;
-    }
+  :root{
+    --navy:       #1c3a5e;
+    --navy-deep:  #142c48;
+    --ink:        #1b232c;
+    --ink-soft:   #5b6772;
+    --line:       #e4e8ec;
+    --paper:      #ffffff;
+    --paper-tint: #f6f8fa;
+    --gold:       #b8923f;
+  }
 
-    header {
-      background: linear-gradient(135deg, #0b3d91 0%, #123a8c 55%, #0a2a66 100%);
-      color: white;
-      text-align: center;
-      padding: 20px 10px 40px 10px;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.4);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-      position: relative;
-    }
-    header h1 {
-      margin: 0 0 6px 0;
-      font-size: 2.3em;
-      letter-spacing: 0.5px;
-    }
-    header p {
-      margin: 0;
-      font-size: 14px;
-      color: #f3d98b;
-      font-weight: bold;
-      letter-spacing: 0.5px;
-    }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
 
-    .gold-divider {
-      display: block;
-      max-width: 380px;
-      margin: 0 auto;
-      opacity: 0.9;
-    }
+  body{
+    margin:0;
+    background:var(--paper);
+    font-family:'Inter', sans-serif;
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+  }
 
-    section {
-      max-width: 1000px;
-      margin: 20px auto 0 auto;
-      padding: 25px 20px 35px 20px;
-      background: rgba(255, 255, 255, 0.96);
-      border-radius: 14px;
-      box-shadow:
-        0 10px 25px rgba(11,61,145,0.15),
-        0 2px 6px rgba(0,0,0,0.08);
-      border: 1px solid rgba(203,161,53,0.35);
-    }
-    section h2 {
-      text-align: center;
-      color: #0b3d91;
-      font-size: 1.5em;
-      letter-spacing: 0.5px;
-      margin-top: 0;
-      margin-bottom: 6px;
-    }
+  /* ---------- header ---------- */
+  header{
+    background:var(--navy-deep);
+    color:#fff;
+    padding:58px 24px 44px;
+  }
+  .header-inner{
+    max-width:960px;
+    margin:0 auto;
+    text-align:center;
+  }
+  .header-inner .eyebrow{
+    font-size:12px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:#a9bcd4;
+    font-weight:600;
+    margin:0 0 16px;
+  }
+  header h1{
+    font-family:'Source Serif 4', serif;
+    font-weight:600;
+    font-size:clamp(2em, 4.2vw, 2.85em);
+    margin:0 0 12px;
+    letter-spacing:-0.01em;
+  }
+  header p.subhead{
+    margin:0;
+    font-size:14.5px;
+    color:#c4d1e0;
+    font-weight:400;
+  }
+  .gold-underline{
+    width:56px; height:3px;
+    background:var(--gold);
+    margin:22px auto 0;
+    border-radius:2px;
+  }
 
-    section.transparent {
-      background: rgba(255, 255, 255, 0.18);
-      border: 1px solid rgba(203,161,53,0.55);
-      backdrop-filter: blur(2px);
-    }
-    section.transparent h2 {
-      color: #ffffff;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.7);
-    }
-    section > p.note {
-      text-align: center;
-      font-size: 13px;
-      color: #8a6d1a;
-      margin: 4px 0 10px 0;
-      font-style: italic;
-    }
+  /* ---------- quick nav ---------- */
+  nav.quicknav{
+    position:sticky;
+    top:0;
+    z-index:10;
+    background:var(--paper);
+    border-bottom:1px solid var(--line);
+    box-shadow:0 1px 0 rgba(0,0,0,0.02);
+  }
+  .quicknav-inner{
+    max-width:960px;
+    margin:0 auto;
+    display:flex;
+    flex-wrap:wrap;
+    gap:4px;
+    padding:0 24px;
+  }
+  .quicknav a{
+    display:inline-block;
+    padding:16px 4px;
+    margin-right:28px;
+    font-size:13.5px;
+    font-weight:500;
+    color:var(--ink-soft);
+    text-decoration:none;
+    border-bottom:2px solid transparent;
+    white-space:nowrap;
+  }
+  .quicknav a:hover{
+    color:var(--navy);
+  }
 
-    .officials-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 26px;
-      margin-top: 22px;
-    }
+  /* ---------- main ---------- */
+  main{
+    max-width:960px;
+    margin:0 auto;
+    padding:8px 24px 20px;
+  }
 
-    /* ---------- CARD COMPONENT STYLES ---------- */
-    .card {
-      background: #ffffff;
-      width: 210px;
-      padding: 0 0 18px 0;
-      border-radius: 12px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
-      border: 1px solid rgba(203,161,53,0.3);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
+  section.tier{
+    padding:56px 0 8px;
+    border-bottom:1px solid var(--line);
+    scroll-margin-top:60px;
+  }
+  section.tier:last-child{ border-bottom:none; }
 
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.2);
-    }
+  .tier-heading{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:8px 20px;
+    margin-bottom:32px;
+  }
+  .tier-heading h2{
+    font-family:'Source Serif 4', serif;
+    font-weight:600;
+    font-size:1.55em;
+    margin:0;
+    color:var(--navy-deep);
+  }
+  .tier-heading .tier-note{
+    font-size:12.5px;
+    color:var(--ink-soft);
+    letter-spacing:0.02em;
+  }
 
-    .ribbon {
-      position: absolute;
-      top: 14px;
-      right: -30px;
-      background: #cba135;
-      color: #ffffff;
-      font-size: 9px;
-      font-weight: bold;
-      padding: 4px 30px;
-      transform: rotate(45deg);
-      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-      letter-spacing: 0.5px;
-      z-index: 2;
-    }
+  .roster{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(215px, 1fr));
+    gap:28px 24px;
+  }
 
-    .photo-frame {
-      width: 105px;
-      height: 105px;
-      border-radius: 50%;
-      margin: 22px auto 10px auto;
-      border: 3px solid #0b3d91;
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #eef3fb;
-      box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
-    }
+  /* solo / duo rows (University, Campus) get a fixed max width so cards don't stretch huge */
+  .roster.compact{
+    grid-template-columns:repeat(auto-fill, minmax(260px, 260px));
+  }
 
-    .photo-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+  /* ---------- card ---------- */
+  .card{
+    text-align:left;
+  }
+  .photo{
+    width:100%;
+    aspect-ratio:1/1;
+    background:var(--paper-tint);
+    border:1px solid var(--line);
+    border-radius:6px;
+    overflow:hidden;
+    margin-bottom:14px;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .photo img{
+    width:100%; height:100%;
+    object-fit:cover;
+    display:block;
+  }
+  .photo .initials{
+    font-family:'Source Serif 4', serif;
+    font-size:1.7em;
+    font-weight:600;
+    color:var(--navy);
+    display:none;
+  }
 
-    .sheen {
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 50%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
-      transform: skewX(-25deg);
-      transition: left 0.65s ease;
-    }
+  .card h3{
+    font-family:'Source Serif 4', serif;
+    font-weight:600;
+    font-size:1.06em;
+    margin:0 0 4px;
+    color:var(--ink);
+    line-height:1.3;
+  }
+  .card p.position{
+    margin:0 0 3px;
+    font-size:12px;
+    color:var(--gold);
+    font-weight:600;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+  }
+  .card p.dept{
+    margin:0;
+    font-size:12.5px;
+    color:var(--ink-soft);
+    line-height:1.45;
+  }
 
-    .card:hover .sheen {
-      left: 150%;
-    }
+  /* ---------- footer ---------- */
+  footer{
+    background:var(--paper-tint);
+    border-top:1px solid var(--line);
+    padding:36px 24px 42px;
+    text-align:center;
+  }
+  footer p{
+    margin:3px 0;
+    font-size:12.5px;
+    color:var(--ink-soft);
+  }
+  footer p.org{
+    font-weight:600;
+    color:var(--ink);
+  }
 
-    .card h3 {
-      margin: 12px 10px 4px 10px;
-      font-size: 1.05em;
-      color: #0b3d91;
-    }
+  @media (max-width:600px){
+    .quicknav a{ margin-right:18px; font-size:13px; }
+    section.tier{ padding:42px 0 4px; }
+    .roster, .roster.compact{ grid-template-columns:repeat(2, 1fr); }
+  }
+  @media (max-width:400px){
+    .roster, .roster.compact{ grid-template-columns:1fr 1fr; gap:22px 14px; }
+  }
 
-    .card p.position {
-      margin: 0 10px;
-      font-size: 11.5px;
-      color: #8a6d1a;
-      font-weight: bold;
-      letter-spacing: 0.3px;
-      text-transform: uppercase;
-    }
-
-    .card p.dept {
-      margin: 6px 10px 0 10px;
-      font-size: 12px;
-      color: #555;
-      line-height: 1.4;
-    }
-
-    footer {
-      text-align: center;
-      padding: 26px 10px 34px 10px;
-      color: #f3d98b;
-      font-size: 12.5px;
-      text-shadow: 0 1px 4px rgba(0,0,0,0.5);
-    }
-    footer p { margin: 4px 0; }
-  </style>
+</style>
 </head>
 <body>
 
-  <div class="brand-banner"></div>
-
-  <header>
+<header>
+  <div class="header-inner">
+    <p class="eyebrow">Iloilo State University of Fisheries Science &amp; Technology</p>
     <h1>Meet the Campus Leadership</h1>
-    <p>ISUFST — SAN ENRIQUE CAMPUS</p>
-  </header>
+    <p class="subhead">San Enrique Campus</p>
+    <div class="gold-underline"></div>
+  </div>
+</header>
 
-  <!-- ================= 1. UNIVERSITY LEVEL OFFICIALS ================= -->
-  <section class="transparent">
-    <h2>University Level</h2>
-    <p class="note" style="color:#f3d98b;">Iloilo State University of Fisheries Science and Technology — System</p>
+<nav class="quicknav">
+  <div class="quicknav-inner">
+    <a href="#university">University</a>
+    <a href="#campus">Campus Officials</a>
+    <a href="#deans">Academic Deans</a>
+    <a href="#cici">CICI Faculty &amp; Staff</a>
+  </div>
+</nav>
 
-    <div class="officials-grid">
+<main>
+
+  <!-- ================= 1. UNIVERSITY LEVEL ================= -->
+  <section class="tier" id="university">
+    <div class="tier-heading">
+      <h2>University Level</h2>
+      <span class="tier-note">Office of the President — System</span>
+    </div>
+    <div class="roster compact">
 
       <div class="card">
-        <div class="ribbon">SYSTEM</div>
-        <div class="photo-frame">
-          <img src="1.webp" alt="Dr. Nordy D. Siason Jr. - University President">
-          <div class="sheen"></div>
+        <div class="photo">
+          <img src="1.webp" alt="Dr. Nordy D. Siason Jr." onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <span class="initials">NS</span>
         </div>
         <h3>Dr. Nordy D. Siason Jr.</h3>
         <p class="position">University President</p>
         <p class="dept">Office of the President</p>
       </div>
 
-    
+    </div>
   </section>
 
-  <!-- ================= 2. CAMPUS LEVEL OFFICIALS ================= -->
-  <section>
-    <h2>Campus Officials</h2>
-    <p class="note">Iloilo State University of Fisheries Science and Technology — San Enrique Campus</p>
-
-    <div class="officials-grid">
+  <!-- ================= 2. CAMPUS LEVEL ================= -->
+  <section class="tier" id="campus">
+    <div class="tier-heading">
+      <h2>Campus Officials</h2>
+      <span class="tier-note">ISUFST San Enrique Campus</span>
+    </div>
+    <div class="roster compact">
 
       <div class="card">
-        <div class="ribbon">CAMPUS</div>
-        <div class="photo-frame">
-          <img src="2.jpg" alt="Campus Administrator">
-          <div class="sheen"></div>
+        <div class="photo">
+          <img src="2.jpg" alt="Dr. Michael B. Dizon" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <span class="initials">MD</span>
         </div>
-        <h3>DR. MICHAEL B. DIZON</h3>
+        <h3>Dr. Michael B. Dizon</h3>
         <p class="position">Campus Administrator</p>
         <p class="dept">ISUFST San Enrique Campus</p>
       </div>
 
       <div class="card">
-        <div class="ribbon">ADMIN</div>
-        <div class="photo-frame">
-          <img src="3.jpeg" alt="Administrative Officer">
-          <div class="sheen"></div>
+        <div class="photo">
+          <img src="3.jpeg" alt="Melby P. Parreño" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <span class="initials">MP</span>
         </div>
         <h3>Melby P. Parreño</h3>
         <p class="position">Administrative Officer</p>
         <p class="dept">Finance &amp; General Services</p>
       </div>
 
-    
+    </div>
   </section>
 
-  <!-- ================= 3. DEANS OF DEPARTMENTS ================= -->
-  <section>
-    <h2>Academic Deans</h2>
-    <p class="note">Deans of Colleges and Departments</p>
-
-    <div class="officials-grid">
+  <!-- ================= 3. DEANS ================= -->
+  <section class="tier" id="deans">
+    <div class="tier-heading">
+      <h2>Academic Deans</h2>
+      <span class="tier-note">Deans of Colleges &amp; Departments</span>
+    </div>
+    <div class="roster">
 
       <div class="card">
-        <div class="ribbon">DEAN</div>
-        <div class="photo-frame">
-          <img src="4.jpeg" alt="Dr. Wenda D. Panes Ed.D - Dean, CICI">
-          <div class="sheen"></div>
+        <div class="photo">
+          <img src="4.jpeg" alt="Dr. Wenda D. Panes Ed.D" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <span class="initials">WP</span>
         </div>
         <h3>Dr. Wenda D. Panes Ed.D</h3>
         <p class="position">Dean</p>
-        <p class="dept">College of Informatics and Computer Innovation</p>
+        <p class="dept">College of Informatics &amp; Computer Innovation</p>
       </div>
 
       <div class="card">
-        <div class="ribbon">DEAN</div>
-        <div class="photo-frame">
-          <img src="5.jpeg" alt="Dean, College of Education">
-          <div class="sheen"></div>
+        <div class="photo">
+          <img src="5.jpeg" alt="Dr. Rene T. Estomo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <span class="initials">RE</span>
         </div>
-        <h3>Dr. Rene T. Estomo </h3>
+        <h3>Dr. Rene T. Estomo</h3>
         <p class="position">Dean</p>
         <p class="dept">College of Education</p>
       </div>
 
       <div class="card">
-        <div class="ribbon">DEAN</div>
-        <div class="photo-frame">
-          <img src="6.jpeg" alt="Dean, College of Agriculture">
-          <div class="sheen"></div>
+        <div class="photo">
+          <img src="6.jpeg" alt="Noli L. Gerona" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <span class="initials">NG</span>
         </div>
-        <h3>Noli L. Gerona </h3>
+        <h3>Noli L. Gerona</h3>
         <p class="position">Dean</p>
         <p class="dept">College of Agriculture</p>
       </div>
-      
-        <div class="card">
-    <div class="ribbon">DEAN</div>
-    <div class="photo-frame">
-      <img src="7.jpeg" alt="Dean, College of management">
-      <div class="sheen"></div>
-    </div>
-    <h3>Janice H. Ching </h3>
-    <p class="position">Dean</p>
-    <p class="dept">College of Management</p>
-  </div>
 
+      <div class="card">
+        <div class="photo">
+          <img src="7.jpeg" alt="Janice H. Ching" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <span class="initials">JC</span>
+        </div>
+        <h3>Janice H. Ching</h3>
+        <p class="position">Dean</p>
+        <p class="dept">College of Management</p>
+      </div>
 
     </div>
   </section>
 
-  <!-- ================= 4. CICI FACULTY MEMBERS & STAFF ================= -->
-  <section>
-    <h2>College of Informatics and Computer Innovation (CICI)</h2>
-    <p class="note">Faculty Members &amp; Support Staff</p>
-
-    <div class="officials-grid">
+  <!-- ================= 4. CICI FACULTY & STAFF ================= -->
+  <section class="tier" id="cici">
+    <div class="tier-heading">
+      <h2>College of Informatics &amp; Computer Innovation</h2>
+      <span class="tier-note">Faculty Members &amp; Support Staff</span>
+    </div>
+    <div class="roster">
 
       <div class="card">
-        <div class="ribbon">DEAN</div>
-        <div class="photo-frame">
-          <img src="8.jpeg" alt="Dr. Wenda D. Panes Ed.D">
-          <div class="sheen"></div>
+        <div class="photo">
+          <img src="8.jpeg" alt="Dr. Wenda D. Panes Ed.D" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <span class="initials">WP</span>
         </div>
         <h3>Dr. Wenda D. Panes Ed.D</h3>
         <p class="position">Dean / Faculty</p>
-        <p class="dept">College of Informatics and Computer Innovation</p>
+        <p class="dept">CICI</p>
       </div>
 
       <div class="card">
-        <div class="ribbon">FACULTY</div>
-        <div class="photo-frame">
-          <img src="9.jpg" alt="Instr. Dave Allan Tagacay">
-          <div class="sheen"></div>
+        <div class="photo">
+          <img src="9.jpg" alt="Instr. Dave Allan Tagacay" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <span class="initials">DT</span>
         </div>
         <h3>Instr. Dave Allan Tagacay</h3>
         <p class="position">Instructor</p>
-        <p class="dept">College of Informatics and Computer Innovation</p>
+        <p class="dept">CICI</p>
       </div>
 
       <div class="card">
-        <div class="ribbon">FACULTY</div>
-        <div class="photo-frame">
-          <img src="10.jpg" alt="Dr. Wenna J. Bulnes">
-          <div class="sheen"></div>
+        <div class="photo">
+          <img src="10.jpg" alt="Dr. Wenna J. Bulnes" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <span class="initials">WB</span>
         </div>
         <h3>Dr. Wenna J. Bulnes</h3>
         <p class="position">Faculty</p>
-        <p class="dept">College of Informatics and Computer Innovation</p>
+        <p class="dept">CICI</p>
       </div>
 
       <div class="card">
-        <div class="ribbon">FACULTY</div>
-        <div class="photo-frame">
-          <img src="11.jpg" alt="Dr. Analiza G. Alingalan">
-          <div class="sheen"></div>
+        <div class="photo">
+          <img src="11.jpg" alt="Dr. Analiza G. Alingalan" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <span class="initials">AA</span>
         </div>
         <h3>Dr. Analiza G. Alingalan</h3>
         <p class="position">Faculty</p>
-        <p class="dept">College of Informatics and Computer Innovation</p>
+        <p class="dept">CICI</p>
       </div>
 
       <div class="card">
-        <div class="ribbon">FACULTY</div>
-        <div class="photo-frame">
-          <img src="12.jpg" alt="Dr. Dythne P. Dacudao">
-          <div class="sheen"></div>
+        <div class="photo">
+          <img src="12.jpg" alt="Dr. Dythne P. Dacudao" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <span class="initials">DD</span>
         </div>
         <h3>Dr. Dythne P. Dacudao</h3>
         <p class="position">Faculty</p>
-        <p class="dept">College of Informatics and Computer Innovation</p>
+        <p class="dept">CICI</p>
       </div>
 
       <div class="card">
-        <div class="ribbon">FACULTY</div>
-        <div class="photo-frame">
-          <img src="13.jpg" alt="Dr. Ian P. Sugatan">
-          <div class="sheen"></div>
+        <div class="photo">
+          <img src="13.jpg" alt="Dr. Ian P. Sugatan" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <span class="initials">IS</span>
         </div>
         <h3>Dr. Ian P. Sugatan</h3>
         <p class="position">Faculty</p>
-        <p class="dept">College of Informatics and Computer Innovation</p>
+        <p class="dept">CICI</p>
       </div>
 
       <div class="card">
-        <div class="ribbon">FACULTY</div>
-        <div class="photo-frame">
-          <img src="14.jpeg" alt="Instr. Ivan Silvestre">
-          <div class="sheen"></div>
+        <div class="photo">
+          <img src="14.jpeg" alt="Instr. Ivan Silvestre" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <span class="initials">IV</span>
         </div>
         <h3>Instr. Ivan Silvestre</h3>
         <p class="position">Instructor</p>
-        <p class="dept">College of Informatics and Computer Innovation</p>
+        <p class="dept">CICI</p>
       </div>
-      
+
       <div class="card">
-        <div class="ribbon">STAFF</div>
-        <div class="photo-frame">
-          <img src="15.jpeg" alt="Andrea Delos Santos">
-          <div class="sheen"></div>
+        <div class="photo">
+          <img src="15.jpeg" alt="Andrea Delos Santos" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <span class="initials">AD</span>
         </div>
         <h3>Andrea Delos Santos</h3>
         <p class="position">Staff</p>
-        <p class="dept">College of Informatics and Computer Innovation</p>
+        <p class="dept">CICI</p>
       </div>
 
       <div class="card">
-        <div class="ribbon">STAFF</div>
-        <div class="photo-frame">
-          <img src="16.jpeg" alt="Michael Borcillo">
-          <div class="sheen"></div>
+        <div class="photo">
+          <img src="16.jpeg" alt="Michael Borcillo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <span class="initials">MB</span>
         </div>
         <h3>Michael Borcillo</h3>
         <p class="position">Staff</p>
-        <p class="dept">College of Informatics and Computer Innovation</p>
+        <p class="dept">CICI</p>
       </div>
-
 
     </div>
   </section>
 
-  <footer>
-    <p>Iloilo State University of Fisheries Science and Technology</p>
-    <p>San Enrique Campus &middot; Est. 2020</p>
-  </footer>
+</main>
+
+<footer>
+  <p class="org">Iloilo State University of Fisheries Science and Technology</p>
+  <p>San Enrique Campus &middot; Established 2020</p>
+</footer>
 
 </body>
 </html>
-
